@@ -1,0 +1,250 @@
+.Section_speakers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.Speakers_title {
+    position: relative;
+    font-family: Avenir-Black;
+    font-size: 84px;
+    text-transform: uppercase;
+    color: white;
+    line-height: 1;
+    margin: 20px;
+}
+
+.Speakers_banner {
+    width: 90%;
+}
+
+.Speakers_banner img{
+    width: 100%;
+}
+
+.Speakers_pillars_container {
+    position: relative;
+    background: rgb(0,0,0,0.7);
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 60px 0;
+}
+
+.Speakers_pillars_container p {
+    font-family: Avenir-Medium;
+    font-size: 14px;
+    color: white;
+}
+
+.Speakers_pillars {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Pillar_img .Pillar_all {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--ppal-color);
+    margin: 0;
+}
+
+.Pillar_img {
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.Pillar_img img {
+    width: 60px;
+}
+
+.Pillar_img p {
+    text-transform: capitalize;
+    font-family: Avenir-Book;
+    font-size: 12px;
+    margin: 0;
+    color: var(--ppal-color);
+}
+
+.Speakres_grid {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    margin: 60px 0;
+}
+
+.Speaker_info {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 10px;
+}
+
+.Speaker_info:hover, .Speaker_info:focus {
+    text-decoration: none;
+    outline: none;
+    outline-offset: none;
+}
+
+.Speaker_info img {
+    width: 120px;
+    border-radius: 50%;
+    margin: 0 10px;
+}
+
+.Speaker_info section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.Speaker_info_title {
+    font-family: Avenir-Medium;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.Speaker_info_position {
+    font-family: Avenir-Book;
+    font-size: 12px;
+    color: white;
+    margin: 0;
+}
+
+/* Color Creativeness */
+
+.Speaker_info.creativeness img {
+    border: 4px solid var(--creativeness);
+}
+
+.Speaker_info_title.creativeness {
+    color: var(--creativeness);
+}
+
+.Pillar_img.creativeness p{
+    color: var(--creativeness);
+}
+
+/* Color Smartness */
+
+.Speaker_info.smartness img {
+    border: 4px solid var(--smartness);
+}
+
+.Speaker_info_title.smartness {
+    color: var(--smartness);
+}
+
+.Pillar_img.smartness p{
+    color: var(--smartness);
+}
+
+/* Color Techness */
+
+.Speaker_info.techness img {
+    border: 4px solid var(--techness);
+}
+
+.Speaker_info_title.techness {
+    color: var(--techness);
+}
+
+.Pillar_img.techness p{
+    color: var(--techness);
+}
+
+/* Color Humanness */
+
+.Speaker_info.humanness img {
+    border: 4px solid var(--humanness);
+}
+
+.Speaker_info_title.humanness {
+    color: var(--humanness);
+}
+
+.Pillar_img.humanness p{
+    color: var(--humanness);
+}
+
+/* Color Disruptiveness */
+
+.Speaker_info.disruptiveness img {
+    border: 4px solid var(--disruptiveness);
+}
+
+.Speaker_info_title.disruptiveness {
+    color: var(--disruptiveness);
+}
+
+.Pillar_img.disruptiveness p{
+    color: var(--disruptiveness);
+}
+
+/* Color Awakeness */
+
+.Speaker_info.awakeness img {
+    border: 4px solid var(--awakeness);
+}
+
+.Speaker_info_title.awakeness {
+    color: var(--awakeness);
+}
+
+.Pillar_img.awakeness p{
+    color: var(--awakeness);
+}
+
+@media (max-width: 849px) {
+    .Speakers_title {
+        font-size: 54px;
+    }
+    .Speakers_pillars {
+        display: block;
+        white-space: nowrap;
+        overflow-x: scroll;
+    }
+    .Pillar_img {
+        width: 80px;
+        display: inline-block;
+        text-align: center;
+        margin: 0 5px;
+    }
+    .Pillar_img img {
+        vertical-align: baseline;
+        width: 50px;
+    }
+    .Pillar_img .Pillar_all {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+    }
+    .Speaker_info {
+        width: 130px;
+    }
+    .Speaker_info_position {
+        font-size: 10px;
+    }
+}

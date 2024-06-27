@@ -1,0 +1,29 @@
+.Arena_section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.Arena_iframe {
+    width: 90%;
+    height: 80vh;
+    margin: 20px auto;
+}
+
+.Arena_title {
+    text-align: center;
+    font-family: Avenir-Black;
+    font-size: 55px;
+    text-transform: uppercase;
+    color: #FBE90D;
+    margin: 0;
+}
+
+.Arena_section p {
+    width: 80%;
+    font-family: Avenir-Book;
+    font-size: 14px;
+    color: white;
+    padding: 0;
+    margin: 0;text-align: justify;
+}

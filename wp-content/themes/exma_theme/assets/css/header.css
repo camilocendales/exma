@@ -1,0 +1,402 @@
+@font-face {
+    font-family: Avenir-Medium;
+    src: url(../fonts/Avenir-Medium-09.ttf);
+}
+
+@font-face {
+    font-family: Avenir-Book;
+    src: url(../fonts/Avenir-Book-01.ttf);
+}
+
+@font-face {
+    font-family: Avenir-Black;
+    src: url(../fonts/Avenir-Black-03.ttf);
+}
+
+@font-face {
+    font-family: Avenir-Heavy;
+    src: url(../fonts/Avenir-Heavy-05.ttf);
+}
+
+@font-face {
+    font-family: Avenir-Light;
+    src: url(../fonts/Avenir-Light-07.ttf);
+}
+
+@font-face {
+    font-family: Avenir-Roman;
+    src: url(../fonts/Avenir-Roman-12.ttf);
+}
+
+:root {
+    --bg-color: rgb(0,0,0,0.95);
+    --ppal-color: #01FFFF;
+    --creativeness : #FFE31D;
+    --smartness: #00FFFF;
+    --techness: #EC57E4;
+    --humanness: #FFFFFF;
+    --disruptiveness: #FF7300;
+    --awakeness: #6CFF6C;
+    --rojopic: #93000B;
+    --rojo: #FF0013;
+    --naranja: #FF7300;
+    --gris: #B2B2B2;
+    --amarillo: #FFE31D;
+    --verde: #6CFF6C;
+    --azul-rey: #0808FF;
+    --morado: #812CA4;
+    --celeste: #00FFFF;
+    --rosa: #EC57E4;
+    --cafe: #FFD1A4;
+}
+
+html {
+    display: flex;
+    justify-content: center;
+    background-color: #000000;
+}
+body {
+    width: 100%;
+    max-width: 1920px;
+}
+
+.Menu_ppal {
+    max-width: 1920px;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    height:120px;
+    z-index: 30;
+}
+.Menu_ppal_content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.Menu_ppal_logo{
+    width: 150px;   
+}
+
+.Menu_ppal_list .menu-menu-principal-container ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.Menu_ppal_list .menu-menu-principal-container ul li {
+    padding: 2px 40px;
+}
+
+.Menu_ppal_list .menu-menu-principal-container .menu-item a:hover, .menu-item a:focus {
+    text-decoration: none;
+    color: #000!important;
+    box-shadow: inset 500px 0 0 0 white;
+}
+
+.Menu_ppal_list .menu-menu-principal-container .menu-item a[aria-current='page'] {
+    font-family: Avenir-Black;
+    font-size: 16px;
+}
+
+.Menu_ppal_list .menu-menu-principal-container .menu-item a {
+    text-transform: uppercase;
+    font-family: Avenir-Book;
+    font-size: 14px;
+    color: white;
+    box-shadow: inset 0 0 0 0 white;
+	padding: 0 1rem;
+	margin: 0 -1rem;
+    transition: color .5s ease-in-out, box-shadow .5s ease-in-out;
+}
+
+/* Reservation */
+
+.Reservation {
+    display:flex;
+    z-index:40;
+    top: 0;
+    right: 0;
+    padding: 20px 0;
+}
+
+.Button_reservation {
+    width: 120px;
+    height: 43px;
+    margin: 0 15px;
+    perspective: 1000px;
+    border-radius: 7px;
+    -webkit-box-shadow: 6px 6px 0px 1px var(--awakeness); 
+    box-shadow: 6px 6px 0px 1px var(--awakeness);
+}
+
+.Button_reservation a {
+    display: block;
+    position: relative;
+    font-family: Avenir-Black;
+    font-size: 14px;
+    transform-style: preserve-3d;
+    transition: transform .25s;
+    transform: translateZ(-20px);
+}
+
+.Button_reservation a:hover {
+    transform: translateY(20px) 
+    rotateX(-90deg);
+}
+
+.Button_reservation a::before, 
+.Button_reservation a::after {
+    position: absolute;
+    content: 'COMPRA AQUÍ';
+    height: 45px;
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--awakeness);
+    box-sizing: border-box;
+    border-radius: 7px;
+}
+
+.Button_reservation a::before {
+    color: var(--awakeness);
+    background: #000;
+    transform: rotateY(0deg) 
+    translateZ(20px);
+}
+
+.Button_reservation a::after {
+    color: #000;
+    background: var(--awakeness);
+    transform: rotateY(0deg); 
+    transform: rotateX(90deg) 
+    translateZ(20px);
+}
+
+/* Menu Mobile */
+
+.Menu__button {
+    display:none;
+    z-index:40;
+    width: 80px;
+    height: 80px;
+    top: 0;
+    left: 0;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+.Menu__button p {
+    text-transform: uppercase;
+    font-family: Avenir-Black;
+    font-size: 16px;
+    color: var(--awakeness);
+}
+.Menu__line {
+    background-color: white;
+    width: 25px;
+    height: 5px;
+    margin: 2px 0px 2px 0px;
+    transition: .5s;
+}
+
+.Menu__line.middle {
+    width: 30px;
+}
+
+.Menu_ppal_mobile {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    position: fixed;
+    background-color: var(--bg-color);
+    width: 100%;
+    height: 100vh;
+    z-index: 30;
+}
+
+.Menu_ppal_list_mobile {
+	width:100%;
+    background-color: var(--bg-color);
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.Menu_ppal_list_mobile .menu-menu-principal-container ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding-inline-start: 0px;
+}
+
+.Menu_ppal_list_mobile .menu-menu-principal-container ul li {
+    padding: 2px 40px;
+    text-align: center;
+}
+
+.Menu_ppal_list_mobile .menu-menu-principal-container ul li a{
+    text-transform: uppercase;
+    font-family: Avenir-Black;
+    font-size: 32px;
+    color: var(--awakeness);
+}
+
+.Menu_ppal_list_mobile .menu-menu-principal-container ul li a[aria-current='page']{
+    text-decoration: 6px underline var(--awakeness);
+}
+
+.Menu__line.first.rotate_left {
+    transform: rotate(-45deg);
+    position: absolute;
+}
+.Menu__line.middle {
+    width: 30px;
+}
+
+.Menu__line.middle.desappear {
+    width: 0px;
+}
+.Menu__line.last.rotate_right {
+    transform: rotate(45deg);
+    position: absolute;
+}
+
+#Loop_content{
+    width:100%;
+    overflow: hidden;
+}
+
+.Text_content {
+    background-color: white;
+    color: #000;
+    width:100%;
+    font-size: 14px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 5px 0;
+    letter-spacing: 1px;
+}
+
+.Text_loop {
+    display:inline-block;
+    /* Apply animation to this element */
+    -webkit-animation: scrolling-left1 25s linear infinite;
+    animation: scrolling-left1 25s linear infinite;
+}
+
+.Text_loop2 {
+    display:inline-block;
+    /* Apply animation to this element */
+    -webkit-animation: scrolling-left2 25s linear infinite;
+    animation: scrolling-left2 25s linear infinite;
+    animation-delay: 12.5s;
+}
+
+.Text_loop_mobile {
+    display: none;
+    display:inline-block;
+    /* Apply animation to this element */
+    -webkit-animation: scrolling-left1 10s linear infinite;
+    animation: scrolling-left1 10s linear infinite;
+}
+
+.Text_loop2_mobile {
+    display: none;
+    /* Apply animation to this element */
+    -webkit-animation: scrolling-left2 10s linear infinite;
+    animation: scrolling-left2 10s linear infinite;
+    animation-delay: 5s;
+}
+
+/* scrolling-left is continuous/repeatly text */
+@keyframes scrolling-left1 {
+    0% {transform: translateX(100%);
+        -webkit-transform: translateX(100%);}
+    100% {transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);}
+}
+@keyframes scrolling-left2 {
+    0% {transform: translateX(0%);
+        -webkit-transform: translateX(0%);}
+    100% {transform: translateX(-200%);
+        -webkit-transform: translateX(-200%);}
+}
+
+/* @-webkit-keyframes scrolling-left1 {
+    0% {-webkit-transform: translateX(100%);}
+    100% {-webkit-transform: translateX(-100%);}
+}
+@-webkit-keyframes scrolling-left2 {
+    0% {-webkit-transform: translateX(0%);}
+    100% {-webkit-transform: translateX(-200%);}
+} */
+
+/* Whatsapp button */
+
+.icon-wa {
+    position: fixed;
+    z-index: 5;
+    bottom: 11vh;
+    right: 25px;
+    width: 45px;
+    transition: transform 1s;
+}
+
+.icon-wa img {
+    width: 100%;
+}
+@media (max-width: 849px) {
+	.Menu__button {
+        display:flex;
+    }
+	.Menu_ppal_mobile {
+		display: flex;
+	}
+    .Menu_ppal_list {
+		display: none;
+	}
+    .Button_reservation {
+        width: 90px;
+    }
+    .Button_reservation a::before, 
+    .Button_reservation a::after {
+        width: 90px;
+    }
+    .Button_reservation a {
+        font-size: 10px;
+    }
+    .Text_loop {
+        display: none;
+    }
+    
+    .Text_loop2 {
+        display: none;
+    }
+    .Text_loop_mobile {
+        display: inline-block;
+    }
+    
+    .Text_loop2_mobile {
+        display: inline-block;
+    }
+    .icon-wa {
+        width: 60px;
+    }
+}

@@ -1,0 +1,920 @@
+.Section_tickets {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.Tickets_header {
+    max-width: 430px;
+    margin: 0 7rem;
+}
+.Ticket_info_type {
+    position: relative;
+    font-family: Avenir-Medium;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding-left: 30px;
+}
+
+.Ticket_info_type::before {
+    content: ' ';
+    position: absolute;
+    top: 40%;
+    left: 0;
+    height: 3px;
+}
+
+.Ticket_info_title {
+    position: relative;
+    font-family: Avenir-Black;
+    font-size: 64px;
+    text-transform: uppercase;
+    color: white;
+    line-height: 1;
+    margin: 20px 0;
+}
+
+.Ticket_info_title::after {
+    content: ' ';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 6px;
+}
+
+.Tickets_colors_container {
+    position: relative;
+    background: rgb(0,0,0,0.7);
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.Tickets_colors_container p {
+    font-family: Avenir-Medium;
+    font-size: 14px;
+    color: white;
+}
+
+/* Animation scroll arrows */
+
+.Move_arrows {
+    position: absolute;
+    top: 0;
+    right: 50px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 50px;
+    transform: rotate(270deg);
+}
+
+.arrow {
+    position: absolute;
+    width: 1.5rem;
+    height: 0.3rem;
+    opacity: 0;
+    transform: scale(0.3);
+    animation: move-arrow 3s ease-out infinite;
+}
+
+.arrow:first-child {
+    animation: move-arrow 3s ease-out 1s infinite;
+}
+
+.arrow:nth-child(2) {
+    animation: move-arrow 3s ease-out 2s infinite;
+}
+
+.arrow:before,
+.arrow:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    background: var(--ppal-color);
+}
+
+.arrow:before {
+    left: 0;
+    transform: skewY(30deg);
+}
+
+.arrow:after {
+    right: 0;
+    width: 50%;
+    transform: skewY(-30deg);
+}
+
+@keyframes move-arrow {
+    25% {
+        opacity: 1;
+    }
+    33.3% {
+        opacity: 1;
+        transform: translateY(2.2rem);
+    }
+    66.6% {
+        opacity: 1;
+        transform: translateY(3rem);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(5rem) scale(0.5);
+    }
+}
+
+.Tickets_colors {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Colors_filter_container {
+    width: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 15px;
+    cursor: pointer;
+}
+
+.Colors_filter {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.Colors_filter_container p {
+    text-align: center;
+    text-transform: capitalize;
+    font-family: Avenir-Book;
+    font-size: 12px;
+    margin: 0;
+    height: 35px;
+    white-space: pre-line;
+    overflow-wrap: break-word;
+}
+
+.Tickets_container {
+    display: none;
+    align-items: flex-start;
+    justify-content: center;
+    width: 90%;
+}
+
+.Tickets_container_info {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.Tickets_info {
+    background: rgb(0,0,0,0.7);
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    border-radius: 15px;
+    margin: 20px 0 0 0;
+    padding: 30px 20px;
+}
+
+.Tickets_info h1 {
+    font-family: Avenir-Black;
+    font-size: 44px;
+    text-transform: uppercase;
+    margin: 0 0 10px 0;
+    line-height: 1;
+}
+
+.Tickets_info ul {
+    font-family: Avenir-Book;
+    font-size: 16px;
+    color: white;
+    padding-inline-start: 20px;
+}
+
+.Tickets_info ul li::marker {
+    font-size: 1.5em;
+    line-height: 1;
+}
+
+.Tickets_info p {
+    font-family: Avenir-Black;
+    font-size: 34px;
+    text-transform: uppercase;
+    margin: 0;
+    line-height: 1;
+}
+
+.Tickets_info small {
+    font-family: Avenir-Book;
+    font-size: 12px;
+    color: white;
+}
+
+.Tickets_button {
+    width: 90%;
+    height: 75px;
+    margin: 15px 0;
+}
+
+.Tickets_button_buy {
+    display: block;
+    width: 100%;
+    height: 75px;
+    perspective: 1000px;
+}
+
+.Tickets_button_buy a {
+    display: block;
+    position: relative;
+    font-family: Avenir-Black;
+    font-size: 40px;
+    transform-style: preserve-3d;
+    transition: transform .25s;
+    transform: translateZ(-35px);
+}
+
+.Tickets_button_buy a:hover {
+    transform: translateY(35px) rotateX(-90deg);
+}
+
+.Tickets_button_buy a::before, .Tickets_button_buy a::after {
+    position: absolute;
+    width: 100%;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    border-radius: 12px;
+}
+
+.Tickets_button_buy a::before {
+    color: #000;
+    transform: rotateY(0deg) translateZ(35px);
+}
+
+.Tickets_button_buy a::after {
+    transform: rotateY(0deg);
+    transform: rotateX(90deg) translateZ(35px);
+}
+
+.Sold_out a {
+    pointer-events: none;
+    cursor: default;
+}
+
+.Sold_out a::before, .Sold_out a::after {
+    content: "SOLD OUT";
+}
+
+.Reserve a::before, .Reserve a::after {
+    content: "¡RESERVA YA!";
+}
+
+.Tickets_arena {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.Tickets_arena img {
+    width: 80%;
+    margin: 20px 0 0 0;
+}
+
+/* Colors Tickets */
+
+/* Rojo+pic */
+
+.Ticket_info_type[data-text="rojopic"] {
+    color: var(--rojopic);
+}
+.Ticket_info_type[data-text="rojopic"]::before {
+    border-left: 20px solid var(--rojopic);
+}
+
+.Ticket_info_title[data-text="rojopic"]::after {
+    border-left: 160px solid var(--rojopic);
+}
+
+.Colors_filter_container.rojopic p {
+    color: var(--rojopic);
+}
+
+.Colors_filter.rojopic {
+    background-color: var(--rojopic);
+}
+
+.Tickets_info.rojopic {
+    border: 2px solid var(--rojopic);
+}
+
+.Tickets_info.rojopic h1 {
+    color: var(--rojopic);
+}
+
+.Tickets_info.rojopic ul li::marker {
+    color: var(--rojopic);
+}
+
+.Tickets_info.rojopic p {
+    color: var(--rojopic);
+}
+
+.Tickets_button_buy.rojopic a::before, .Tickets_button_buy.rojopic a::after {
+    border: 5px solid var(--rojopic);
+}
+
+.Tickets_button_buy.rojopic a::before {
+    background: var(--rojopic);
+}
+
+.Tickets_button_buy.rojopic a::after {
+    color: var(--rojopic);
+}
+
+/* rojo */
+
+.Ticket_info_type[data-text="rojo"] {
+    color: var(--rojo);
+}
+.Ticket_info_type[data-text="rojo"]::before {
+    border-left: 20px solid var(--rojo);
+}
+
+.Ticket_info_title[data-text="rojo"]::after {
+    border-left: 160px solid var(--rojo);
+}
+
+.Colors_filter_container.rojo p {
+    color: var(--rojo);
+}
+
+.Colors_filter.rojo {
+    background-color: var(--rojo);
+}
+
+.Tickets_info.rojo {
+    border: 2px solid var(--rojo);
+}
+
+.Tickets_info.rojo h1 {
+    color: var(--rojo);
+}
+
+.Tickets_info.rojo ul li::marker {
+    color: var(--rojo);
+}
+
+.Tickets_info.rojo p {
+    color: var(--rojo);
+}
+
+.Tickets_button_buy.rojo a::before, .Tickets_button_buy.rojo a::after {
+    border: 5px solid var(--rojo);
+}
+
+.Tickets_button_buy.rojo a::before {
+    background: var(--rojo);
+}
+
+.Tickets_button_buy.rojo a::after {
+    color: var(--rojo);
+}
+
+/* naranja */
+
+.Ticket_info_type[data-text="naranja"] {
+    color: var(--naranja);
+}
+.Ticket_info_type[data-text="naranja"]::before {
+    border-left: 20px solid var(--naranja);
+}
+
+.Ticket_info_title[data-text="naranja"]::after {
+    border-left: 160px solid var(--naranja);
+}
+
+.Colors_filter_container.naranja p {
+    color: var(--naranja);
+}
+
+.Colors_filter.naranja {
+    background-color: var(--naranja);
+}
+
+.Tickets_info.naranja {
+    border: 2px solid var(--naranja);
+}
+
+.Tickets_info.naranja h1 {
+    color: var(--naranja);
+}
+
+.Tickets_info.naranja ul li::marker {
+    color: var(--naranja);
+}
+
+.Tickets_info.naranja p {
+    color: var(--naranja);
+}
+
+.Tickets_button_buy.naranja a::before, .Tickets_button_buy.naranja a::after {
+    border: 5px solid var(--naranja);
+}
+
+.Tickets_button_buy.naranja a::before {
+    background: var(--naranja);
+}
+
+.Tickets_button_buy.naranja a::after {
+    color: var(--naranja);
+}
+
+/* gris */
+
+.Ticket_info_type[data-text="gris"] {
+    color: var(--gris);
+}
+.Ticket_info_type[data-text="gris"]::before {
+    border-left: 20px solid var(--gris);
+}
+
+.Ticket_info_title[data-text="gris"]::after {
+    border-left: 160px solid var(--gris);
+}
+
+.Colors_filter_container.gris p {
+    color: var(--gris);
+}
+
+.Colors_filter.gris {
+    background-color: var(--gris);
+}
+
+.Tickets_info.gris {
+    border: 2px solid var(--gris);
+}
+
+.Tickets_info.gris h1 {
+    color: var(--gris);
+}
+
+.Tickets_info.gris ul li::marker {
+    color: var(--gris);
+}
+
+.Tickets_info.gris p {
+    color: var(--gris);
+}
+
+.Tickets_button_buy.gris a::before, .Tickets_button_buy.gris a::after {
+    border: 5px solid var(--gris);
+}
+
+.Tickets_button_buy.gris a::before {
+    background: var(--gris);
+}
+
+.Tickets_button_buy.gris a::after {
+    color: var(--gris);
+}
+
+/* amarillo */
+
+.Ticket_info_type[data-text="amarillo"] {
+    color: var(--amarillo);
+}
+.Ticket_info_type[data-text="amarillo"]::before {
+    border-left: 20px solid var(--amarillo);
+}
+
+.Ticket_info_title[data-text="amarillo"]::after {
+    border-left: 160px solid var(--amarillo);
+}
+
+.Colors_filter_container.amarillo p {
+    color: var(--amarillo);
+}
+
+.Colors_filter.amarillo {
+    background-color: var(--amarillo);
+}
+
+.Tickets_info.amarillo {
+    border: 2px solid var(--amarillo);
+}
+
+.Tickets_info.amarillo h1 {
+    color: var(--amarillo);
+}
+
+.Tickets_info.amarillo ul li::marker {
+    color: var(--amarillo);
+}
+
+.Tickets_info.amarillo p {
+    color: var(--amarillo);
+}
+
+.Tickets_button_buy.amarillo a::before, .Tickets_button_buy.amarillo a::after {
+    border: 5px solid var(--amarillo);
+}
+
+.Tickets_button_buy.amarillo a::before {
+    background: var(--amarillo);
+}
+
+.Tickets_button_buy.amarillo a::after {
+    color: var(--amarillo);
+}
+
+/* verde */
+
+.Ticket_info_type[data-text="verde"] {
+    color: var(--verde);
+}
+.Ticket_info_type[data-text="verde"]::before {
+    border-left: 20px solid var(--verde);
+}
+
+.Ticket_info_title[data-text="verde"]::after {
+    border-left: 160px solid var(--verde);
+}
+
+.Colors_filter_container.verde p {
+    color: var(--verde);
+}
+
+.Colors_filter.verde {
+    background-color: var(--verde);
+}
+
+.Tickets_info.verde {
+    border: 2px solid var(--verde);
+}
+
+.Tickets_info.verde h1 {
+    color: var(--verde);
+}
+
+.Tickets_info.verde ul li::marker {
+    color: var(--verde);
+}
+
+.Tickets_info.verde p {
+    color: var(--verde);
+}
+
+.Tickets_button_buy.verde a::before, .Tickets_button_buy.verde a::after {
+    border: 5px solid var(--verde);
+}
+
+.Tickets_button_buy.verde a::before {
+    background: var(--verde);
+}
+
+.Tickets_button_buy.verde a::after {
+    color: var(--verde);
+}
+
+/* azul-rey */
+
+.Ticket_info_type[data-text="azul-rey"] {
+    color: var(--azul-rey);
+}
+.Ticket_info_type[data-text="azul-rey"]::before {
+    border-left: 20px solid var(--azul-rey);
+}
+
+.Ticket_info_title[data-text="azul-rey"]::after {
+    border-left: 160px solid var(--azul-rey);
+}
+
+.Colors_filter_container.azul-rey p {
+    color: var(--azul-rey);
+}
+
+.Colors_filter.azul-rey {
+    background-color: var(--azul-rey);
+}
+
+.Tickets_info.azul-rey {
+    border: 2px solid var(--azul-rey);
+}
+
+.Tickets_info.azul-rey h1 {
+    color: var(--azul-rey);
+}
+
+.Tickets_info.azul-rey ul li::marker {
+    color: var(--azul-rey);
+}
+
+.Tickets_info.azul-rey p {
+    color: var(--azul-rey);
+}
+
+.Tickets_button_buy.azul-rey a::before, .Tickets_button_buy.azul-rey a::after {
+    border: 5px solid var(--azul-rey);
+}
+
+.Tickets_button_buy.azul-rey a::before {
+    background: var(--azul-rey);
+}
+
+.Tickets_button_buy.azul-rey a::after {
+    color: var(--azul-rey);
+}
+
+/* morado */
+
+.Ticket_info_type[data-text="morado"] {
+    color: var(--morado);
+}
+.Ticket_info_type[data-text="morado"]::before {
+    border-left: 20px solid var(--morado);
+}
+
+.Ticket_info_title[data-text="morado"]::after {
+    border-left: 160px solid var(--morado);
+}
+
+.Colors_filter_container.morado p {
+    color: var(--morado);
+}
+
+.Colors_filter.morado {
+    background-color: var(--morado);
+}
+
+.Tickets_info.morado {
+    border: 2px solid var(--morado);
+}
+
+.Tickets_info.morado h1 {
+    color: var(--morado);
+}
+
+.Tickets_info.morado ul li::marker {
+    color: var(--morado);
+}
+
+.Tickets_info.morado p {
+    color: var(--morado);
+}
+
+.Tickets_button_buy.morado a::before, .Tickets_button_buy.morado a::after {
+    border: 5px solid var(--morado);
+}
+
+.Tickets_button_buy.morado a::before {
+    background: var(--morado);
+}
+
+.Tickets_button_buy.morado a::after {
+    color: var(--morado);
+}
+
+/* celeste */
+
+.Ticket_info_type[data-text="celeste"] {
+    color: var(--celeste);
+}
+.Ticket_info_type[data-text="celeste"]::before {
+    border-left: 20px solid var(--celeste);
+}
+
+.Ticket_info_title[data-text="celeste"]::after {
+    border-left: 160px solid var(--celeste);
+}
+
+.Colors_filter_container.celeste p {
+    color: var(--celeste);
+}
+
+.Colors_filter.celeste {
+    background-color: var(--celeste);
+}
+
+.Tickets_info.celeste {
+    border: 2px solid var(--celeste);
+}
+
+.Tickets_info.celeste h1 {
+    color: var(--celeste);
+}
+
+.Tickets_info.celeste ul li::marker {
+    color: var(--celeste);
+}
+
+.Tickets_info.celeste p {
+    color: var(--celeste);
+}
+
+.Tickets_button_buy.celeste a::before, .Tickets_button_buy.celeste a::after {
+    border: 5px solid var(--celeste);
+}
+
+.Tickets_button_buy.celeste a::before {
+    background: var(--celeste);
+}
+
+.Tickets_button_buy.celeste a::after {
+    color: var(--celeste);
+}
+
+/* rosa */
+
+.Ticket_info_type[data-text="rosa"] {
+    color: var(--rosa);
+}
+.Ticket_info_type[data-text="rosa"]::before {
+    border-left: 20px solid var(--rosa);
+}
+
+.Ticket_info_title[data-text="rosa"]::after {
+    border-left: 160px solid var(--rosa);
+}
+
+.Colors_filter_container.rosa p {
+    color: var(--rosa);
+}
+
+.Colors_filter.rosa {
+    background-color: var(--rosa);
+}
+
+.Tickets_info.rosa {
+    border: 2px solid var(--rosa);
+}
+
+.Tickets_info.rosa h1 {
+    color: var(--rosa);
+}
+
+.Tickets_info.rosa ul li::marker {
+    color: var(--rosa);
+}
+
+.Tickets_info.rosa p {
+    color: var(--rosa);
+}
+
+.Tickets_button_buy.rosa a::before, .Tickets_button_buy.rosa a::after {
+    border: 5px solid var(--rosa);
+}
+
+.Tickets_button_buy.rosa a::before {
+    background: var(--rosa);
+}
+
+.Tickets_button_buy.rosa a::after {
+    color: var(--rosa);
+}
+
+/* cafe */
+
+.Ticket_info_type[data-text="cafe"] {
+    color: var(--cafe);
+}
+.Ticket_info_type[data-text="cafe"]::before {
+    border-left: 20px solid var(--cafe);
+}
+
+.Ticket_info_title[data-text="cafe"]::after {
+    border-left: 160px solid var(--cafe);
+}
+
+.Colors_filter_container.cafe p {
+    color: var(--cafe);
+}
+
+.Colors_filter.cafe {
+    background-color: var(--cafe);
+}
+
+.Tickets_info.cafe {
+    border: 2px solid var(--cafe);
+}
+
+.Tickets_info.cafe h1 {
+    color: var(--cafe);
+}
+
+.Tickets_info.cafe ul li::marker {
+    color: var(--cafe);
+}
+
+.Tickets_info.cafe p {
+    color: var(--cafe);
+}
+
+.Tickets_button_buy.cafe a::before, .Tickets_button_buy.cafe a::after {
+    border: 5px solid var(--cafe);
+}
+
+.Tickets_button_buy.cafe a::before {
+    background: var(--cafe);
+}
+
+.Tickets_button_buy.cafe a::after {
+    color: var(--cafe);
+}
+
+.modal-content {
+    border: none;
+    background: none;
+}
+
+.modal-body.dollar {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-image: url(../images/back_pop.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 600px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    opacity: 1;
+    color: var(--awakeness);
+    text-shadow: none;  
+}
+
+.close:hover {
+    color: var(--awakeness);
+}
+
+@media (max-width: 849px) {
+    .Tickets_header {
+        max-width: 100%;
+        margin: 0 20px;
+    }
+    .Ticket_info_title {
+        font-size: 48px;
+    }
+    .Ticket_info_type {
+        font-size: 18px;
+    }
+    .Move_arrows {
+        display: flex;
+    }
+    .Tickets_colors {
+        display: block;
+        white-space: nowrap;
+        overflow-x: scroll;
+    }
+    .Colors_filter_container, .Colors_filter {
+        display: inline-flex;
+        text-align: center;
+    }
+    .Tickets_container {
+        flex-direction: column-reverse;
+    }
+    .Tickets_arena, .Tickets_container_info {
+        width: 100%;
+    }
+    .Tickets_container_info {
+        align-items: center;
+    }
+    .Tickets_arena {
+        justify-content: center;
+    }
+    .Tickets_arena img {
+        width: 100%;
+    }
+    .Tickets_info h1 {
+        font-size: 48px;
+        inline-size: 100%;
+        overflow-wrap: break-word;
+    }
+}
+
+@media (max-width: 849px) and (orientation: landscape) {
+    .Ticket_info_title {
+        font-size: 68px;
+    }
+}
